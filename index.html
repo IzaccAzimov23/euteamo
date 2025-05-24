@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <title>Nossa História ❤️</title>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@500&display=swap');
+
+    body {
+      margin: 0;
+      padding: 0;
+      min-height: 100vh;
+      background: linear-gradient(to bottom right, #ff9a9e, #fad0c4, #fbc2eb, #a18cd1);
+      background-attachment: fixed;
+      font-family: 'Poppins', sans-serif;
+      color: #002147;
+      text-align: center;
+    }
+
+    h1 {
+      margin-top: 50px;
+      font-size: 3em;
+    }
+
+    .timeline {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 60px;
+      margin: 50px 20px;
+    }
+
+    .event {
+      background-color: rgba(255, 255, 255, 0.6);
+      border-radius: 20px;
+      padding: 20px;
+      max-width: 700px;
+      box-shadow: 0 8px 20px rgba(0,0,0,0.2);
+      transition: transform 0.3s;
+    }
+
+    .event:hover {
+      transform: scale(1.03);
+    }
+
+    .event h2 {
+      margin-bottom: 15px;
+      color: #b30059;
+    }
+
+    .event p {
+      margin-bottom: 15px;
+      font-size: 1.1em;
+    }
+
+    video {
+      width: 100%;
+      max-width: 600px;
+      border-radius: 15px;
+      box-shadow: 0 0 15px rgba(0,0,0,0.3);
+    }
+
+    .audio-player {
+      position: fixed;
+      bottom: 10px;
+      left: 50%;
+      transform: translateX(-50%);
+      opacity: 0.3;
+      transition: opacity 0.3s;
+      z-index: 1000;
+    }
+
+    .audio-player:hover {
+      opacity: 0.9;
+    }
+
+    .date {
+      font-style: italic;
+      margin-top: 10px;
+      color: #555;
+      font-size: 0.9em;
+    }
+  </style>
+</head>
+<body>
+
+  <h1>🌸 Nossa Linha do Tempo 🌸</h1>
+
+  <div class="timeline">
+
+    <div class="event">
+      <h2>🍝 1. Nossa Primeira Comidinha Juntos</h2>
+      <p>Aquele dia especial em que cozinhamos juntos pela primeira vez.</p>
+      <video controls>
+        <source src="video1.mp4" type="video/mp4">
+        Seu navegador não suporta vídeo.
+      </video>
+    </div>
+
+    <div class="event">
+      <h2>🌎✈️ 2. Nossa Primeira Viagem</h2>
+      <p>Nos aventurando pelo mundo juntos, criando memórias inesquecíveis.</p>
+      <video controls>
+        <source src="video2.mp4" type="video/mp4">
+        Seu navegador não suporta vídeo.
+      </video>
+    </div>
+
+    <div class="event">
+      <h2>🌄🚗 3. Terceira Viagem</h2>
+      <p>Mais uma aventura incrível, desbravando paisagens e vivendo momentos únicos.</p>
+      <video controls>
+        <source src="video3.mp4" type="video/mp4">
+        Seu navegador não suporta vídeo.
+      </video>
+    </div>
+
+    <div class="event">
+      <h2>🏡❤️ 4. Finalmente Nossa Casinha 🏠✨</h2>
+      <p>O nosso cantinho cheio de amor, carinho e sonhos realizados. 🏡💕</p>
+      <video controls>
+        <source src="video4.mp4" type="video/mp4">
+        Seu navegador não suporta vídeo.
+      </video>
+    </div>
+
+  </div>
+
+  <div class="audio-player">
+    <audio autoplay loop controls>
+      <source src="sua-musica.mp3" type="audio/mpeg">
+      Seu navegador não suporta áudio.
+    </audio>
+  </div>
+
+</body>
+</html>
