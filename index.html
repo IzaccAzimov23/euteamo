@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
@@ -38,7 +37,22 @@
     }
 
     .audio-player {
-      margin-top: 40px;
+      position: fixed;
+      bottom: 10px;
+      left: 50%;
+      transform: translateX(-50%);
+      opacity: 0.3;
+      transition: opacity 0.3s;
+      z-index: 1000;
+    }
+
+    .audio-player:hover {
+      opacity: 0.9;
+    }
+
+    audio {
+      background: transparent;
+      border: none;
     }
 
     .hearts {
