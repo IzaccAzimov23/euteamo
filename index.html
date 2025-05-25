@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <title>Nossa História ❤️</title>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@500&display=swap');
+
+    body {
+      margin: 0;
+      padding: 0;
+      min-height: 100vh;
+      background: linear-gradient(to bottom right, #ff9a9e, #fad0c4, #fbc2eb, #a18cd1);
+      background-attachment: fixed;
+      font-family: 'Poppins', sans-serif;
+      color: #002147;
+      text-align: center;
+    }
+
+    h1 {
+      margin-top: 50px;
+      font-size: 3em;
+    }
+
+    .timeline {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 60px;
+      margin: 50px 20px;
+    }
+
+    .event {
+      background-color: rgba(255, 255, 255, 0.6);
+      border-radius: 20px;
+      padding: 20px;
+      max-width: 700px;
+      box-shadow: 0 8px 20px rgba(0,0,0,0.2);
+      transition: transform 0.3s;
+    }
+
+    .event:hover {
+      transform: scale(1.03);
+    }
+
+    .event h2 {
+      margin-bottom: 15px;
+      color: #b30059;
+    }
+
+    .event p {
+      margin-bottom: 15px;
+      font-size: 1.1em;
+    }
+
+    video {
+      width: 100%;
+      max-width: 600px;
+      border-radius: 15px;
+      box-shadow: 0 0 15px rgba(0,0,0,0.3);
+    }
+
+    .date {
+      font-style: italic;
+      margin-top: 10px;
+      color: #555;
+      font-size: 0.9em;
+    }
+
+    /* Estilo do controle de música */
+    .music-controls {
+      position: fixed;
+      bottom: 15px;
+      right: 15px;
+      background-color: rgba(255, 255, 255, 0.7);
+      border-radius: 12px;
+      padding: 10px 15px;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      z-index: 999;
+    }
+
+    .music-controls button {
+      border: none;
+      background-color: #b30059;
+      color: white;
+      padding: 6px 12px;
+      border-radius: 8px;
+      cursor: pointer;
+      font-weight: bold;
+    }
+
+    .music-controls input[type="range"] {
+      width: 100px;
+    }
+  </style>
+</head>
+<body>
+
+  <h1>🌸 Nossa Linha do Tempo 🌸</h1>
+
+  <div class="timeline">
+
+    <div class="event">
+      <h2>💖 2 Anos de Muito Amor 💖</h2>
+      <p>No dia 28 de maio de 2023, eu tive a sorte de começar o melhor capítulo da minha vida ao seu lado. Hoje, completamos 2 anos de uma história cheia de amor, risadas, superações e momentos inesquecíveis.</p>
+      <p>Emili Luiza Klein, você é minha melhor amiga, meu amor, minha parceira de aventuras e sonhos. Te amar é a coisa mais linda que já me aconteceu, e sou imensamente grato por cada instante ao seu lado.</p>
+      <p>Que venham muitos e muitos outros anos juntinhos. Te amo com todo meu coração. ❤️</p>
+      <div class="date">28.05.2023 - 28.05.2025</div>
+    </div>
+
+    <div class="event">
+      <h2>🍝 1. Nossa Primeira Comidinha Juntos</h2>
+      <p>Aquele dia especial em que cozinhamos juntos pela primeira vez.</p>
+      <video controls>
+        <source src="video1.mp4" type="video/mp4">
+        Seu navegador não suporta vídeo.
+      </video>
+    </div>
+
+    <div class="event">
+      <h2>🌎✈️ 2. Nossa Primeira Viagem</h2>
+      <p>Nos aventurando pelo mundo juntos, criando memórias inesquecíveis.</p>
+      <video controls>
+        <source src="video2.mp4" type="video/mp4">
+        Seu navegador não suporta vídeo.
+      </video>
+    </div>
+
+    <div class="event">
+      <h2>🌄🚗 3. Terceira Viagem</h2>
+      <p>Mais uma aventura incrível, desbravando paisagens e vivendo momentos únicos.</p>
+      <video controls>
+        <source src="video3.mp4" type="video/mp4">
+        Seu navegador não suporta vídeo.
+      </video>
+    </div>
+
+    <div class="event">
+      <h2>🏡❤️ 4. Finalmente Nossa Casinha 🏠✨</h2>
+      <p>O nosso cantinho cheio de amor, carinho e sonhos realizados. 🏡💕</p>
+      <video controls>
+        <source src="video4.mp4" type="video/mp4">
+        Seu navegador não suporta vídeo.
+      </video>
+    </div>
+
+  </div>
+
+  <!-- Player de música oculto -->
+  <audio id="bg-music" loop>
+    <source src="sua-musica.mp3" type="audio/mpeg">
+    Seu navegador não suporta áudio.
+  </audio>
+
+  <!-- Controles de música -->
+  <div class="music-controls">
+    <button id="play-pause">Play</button>
+    <input type="range" id="volume-slider" min="0" max="1" step="0.01" value="0.5">
+  </div>
+
+  <script>
+    const music = document.getElementById('bg-music');
+    const playPauseBtn = document.getElementById('play-pause');
+    const volumeSlider = document.getElementById('volume-slider');
+    let started = false;
+
+    function startMusic() {
+      if (!started) {
+        music.volume = 0.5;
+        music.play().catch(err => console.warn("Erro ao tocar música:", err));
+        playPauseBtn.textContent = "Pause";
+        started = true;
+      }
+    }
+
+    window.addEventListener('click', startMusic);
+    window.addEventListener('scroll', startMusic);
+    window.addEventListener('touchstart', startMusic);
+
+    playPauseBtn.addEventListener('click', () => {
+      if (music.paused) {
+        music.play();
+        playPauseBtn.textContent = "Pause";
+      } else {
+        music.pause();
+        playPauseBtn.textContent = "Play";
+      }
+    });
+
+    volumeSlider.addEventListener('input', () => {
+      music.volume = volumeSlider.value;
+    });
+  </script>
+
+</body>
+</html>
